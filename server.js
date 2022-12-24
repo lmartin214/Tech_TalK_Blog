@@ -5,7 +5,7 @@ const path = require('path');
 const hbs = exphbs.create({});
 
 // Set up the Express App
-const routes = require('./controllers');
+//const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-app.use(routes);
+//app.use(routes);
 
 sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
